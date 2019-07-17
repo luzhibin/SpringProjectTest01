@@ -8,6 +8,7 @@ public class User {
     }
     public static  User createUser(){
         System.out.println("调用了createUser---");
+        System.out.println("-----");
         return new User();
 
     }

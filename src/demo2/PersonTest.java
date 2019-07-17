@@ -13,6 +13,7 @@ public class PersonTest {
 
         //使用单例关闭工厂-->（所有对象都会销毁）
         //使用多例设计模式-->
+        //关闭applicationContext
         applicationContext.close();
     }
 }

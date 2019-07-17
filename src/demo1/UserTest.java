@@ -33,6 +33,7 @@ public class UserTest {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserDaoOracleImpl obj = (UserDaoOracleImpl) applicationContext.getBean("userDao");//接口 多态
         System.out.println(obj.name);
+        System.out.println("使用依赖注入：给Spring管理类中依赖的属性，通过配置文件进行赋值的过程");
 
     }
 }

@@ -19,7 +19,7 @@ public class Student {
     //set集合
     public Set mySet;
 
-    //map
+    //map-->键值对
     public Map myMap;
 
     public void setMyMap(Map myMap) {

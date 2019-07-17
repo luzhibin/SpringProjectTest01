@@ -1,10 +1,12 @@
 package demo4;
 
+//创建一个Dog类
 public class Dog {
     public String name;
     public String color;
     public Integer age;
 
+    //Dog的属性
     public void setColor(String color) {
         this.color = color;
     }
