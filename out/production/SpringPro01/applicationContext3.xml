@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--p名称空间-->
+    <bean id="dog" class="demo4.Dog" p:age="10" p:color="yellow" p:name="guangyi">
+<!--        <property name="name" value="guangyi"/>
+        <property name="age" value="2"/>
+        <property name="color" value="yellow"/>-->
+    </bean>
+<!--    <bean id="dog2" class="demo4.Dog">
+                <property name="name" value="#{'guangyi2'}"/>
+                <property name="age" value="#{3}"/>
+                <property name="color" value="#{'red'}"/>
+    </bean>-->
+    <bean id="student" class="demo4.Student" p:dog-ref="dog">
+        <!--<property name="name" value="like"/>-->
+        <!--<property name="age" value="10"/>-->
+        <constructor-arg name="name" value="luzhibin"></constructor-arg>
+        <constructor-arg name="age" value="11"></constructor-arg>
+        <!--<property name="dog" ref="dog"/>-->
+        <!--数组-->
+        <property name="attr">
+            <list>
+                <value>张三</value>
+                <value>李四</value>
+                <value>王五</value>
+            </list>
+        </property>
+
+        <!--List集合-->
+        <property name="mylist">
+            <list>
+                <value>list123</value>
+                <value>list456</value>
+                <value>list789</value>
+            </list>
+        </property>
+
+        <!--Set集合-->
+        <property name="mySet">
+            <set>
+                <value>set111</value>
+                <value>set222</value>
+                <value>set333</value>
+            </set>
+        </property>
+
+        <!--map-->
+        <property name="myMap">
+            <map>
+                <entry key="key1" value="value1"></entry>
+                <entry key="key2" value="value2"></entry>
+                <entry key="key3" value="value3"></entry>
+            </map>
+        </property>
+    </bean>
+</beans>

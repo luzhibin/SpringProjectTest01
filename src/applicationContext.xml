@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--id为自己取的名字  class是接口全路径的实现类名称-->
+    <bean id="userDao" class="demo1.UserDaoOracleImpl" init-method="myinit" destroy-method="destroy">
+        <!--
+            可以用：id="userDao"和name="userDao"  id和name:要注入的属性的名称。但是一般用id。两个都需要提供set方法
+            id:使用了约束的唯一约束（即里面不能有相同的名称），里面不能出现特殊字符
+            name：没有使用约束中的唯一约束。里面可以出现特殊字符（一般不使用）
+            value:要注入的值 【注入就是赋值】
+        -->
+        <property name="name" value="666666"/>
+    </bean>
+    <bean id="person" class="demo2.Person"
+          init-method="init"
+          destroy-method="destory"
+          scope="prototype">
+    <!--默认值：singleton单例设计模式; prototype:多例设计模式-->
+        <property name="name" value="123456person"/>
+    </bean>
+    <bean id="user" class="demo3.User" factory-method="createUser"></bean>
+    <bean id="user2" class="demo3.User" factory-bean="user"></bean>
+    <!--导入其他配置文件-->
+    <import resource="applicationContext2.xml"/>
+    <import resource="applicationContext3.xml"/>
+</beans>
